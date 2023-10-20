@@ -7,7 +7,7 @@ import { Button } from "antd";
 import ProductList from "@/components/ProductList/ProductList";
 import LayoutComponent from "@/components/Layout/Layout";
 
-export const getStaticProps = async () => {
+/* export const getStaticProps = async () => {
   const response = await fetch("http://localhost:3000/api/products");
   const { data: productList } = await response.json();
 
@@ -16,7 +16,7 @@ export const getStaticProps = async () => {
       productList,
     },
   };
-};
+}; */
 
 export default function Home({ productList }) {
   const { data: session } = useSession();
@@ -24,7 +24,7 @@ export default function Home({ productList }) {
   if (session) {
     return (
       <LayoutComponent>
-        <ProductList products={productList} />
+        <ProductList products={[]} />
       </LayoutComponent>
     );
   }
