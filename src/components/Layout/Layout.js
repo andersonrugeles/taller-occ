@@ -10,7 +10,7 @@ import {
 const { Header, Sider, Content } = Layout;
 import { useRouter } from "next/router";
 import { Button, Layout, Menu, theme, Badge, Avatar } from "antd";
-import { useSession } from "next-auth/react";
+import { useSession,signOut } from "next-auth/react";
 import { useCart } from "../../../store/cart";
 
 export default function LayoutComponent({ children }) {
