@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useSession, signIn, signOut } from "next-auth/react";
+import fetch from "isomorphic-fetch"
 import { UserSwitchOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import ProductList from "@/components/ProductList/ProductList";
