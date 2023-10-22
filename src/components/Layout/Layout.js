@@ -10,7 +10,7 @@ import {
 const { Header, Sider, Content } = Layout;
 import { useRouter } from "next/router";
 import { Button, Layout, Menu, theme, Badge, Avatar } from "antd";
-import { useSession,signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useCart } from "../../../store/cart";
 
 export default function LayoutComponent({ children }) {
@@ -38,17 +38,19 @@ export default function LayoutComponent({ children }) {
               label: session?.user?.email,
             },
             {
-              key: "3",
+              key: "2",
               icon: <HomeOutlined />,
               label: "Home",
+              "data-testid":"btn-home",
               onClick: () => {
-                setKeyMenu("1");
+                setKeyMenu("2");
                 router.push("/");
               },
             },
             {
-              key: "2",
+              key: "3",
               icon: <ShoppingCartOutlined />,
+              "data-testid":"btn-car",
               label: (
                 <>
                   Carrito
@@ -58,13 +60,14 @@ export default function LayoutComponent({ children }) {
                 </>
               ),
               onClick: () => {
-                setKeyMenu("2");
+                setKeyMenu("3");
                 router.push("/cart");
               },
             },
             {
-              key: "3",
+              key: "4",
               icon: <ApiOutlined />,
+              "data-testid":"btn-close-session",
               label: "Cerrar sesion",
               onClick: () => signOut(),
             },
@@ -82,6 +85,7 @@ export default function LayoutComponent({ children }) {
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => setCollapsed(!collapsed)}
+            data-testid="btn-collapsed"
             style={{
               fontSize: "16px",
               width: 64,
