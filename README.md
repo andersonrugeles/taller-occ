@@ -14,6 +14,9 @@ pnpm dev
 bun dev
 ```
 
+## Arquitectura de referencia
+https://pagina-practica.s3.us-east-2.amazonaws.com/Blank+diagram+-+Page+2.jpeg
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
